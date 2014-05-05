@@ -1,5 +1,14 @@
 #!/bin/bash
 
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+source $DIR/../../../manageUtils.sh
+
+githubProject xkcd1363
+
+BASE=$HGROOT/programs/system/xkcd1363
+
+
+
 #export JAVA_HOME=/usr/lib/jvm/java-6-sun-1.6.0.26/jre 
 export JAVA_HOME=/usr/lib/jvm/java-7-oracle/jre 
 export SDK_HOME=/home/benito/opt/android-sdk-linux/platform-tools/
@@ -29,6 +38,11 @@ install)
 clean)
   ant clean
 ;;
+  
+mirror)
+  syncHg  
+;;
+
   
 esac
 
